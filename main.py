@@ -180,13 +180,15 @@ def fetch_data(payload: RequestPayload) -> dict:
 
             if not user_record:
                 return {
+                    "code": 404,
                     "success": False,
                     "image_match": False,
-                    "message": "User ID not found in backend",
+                    "message": "User not found in backend",
                 }
 
             if payload.base64_value != user_record["expected_base64"]:
                 return {
+                    "code": 401,
                     "success": False,
                     "image_match": False,
                     "message": "Image not matched (base64 does not match backend)",
@@ -201,6 +203,7 @@ def fetch_data(payload: RequestPayload) -> dict:
         connection.commit()
 
     return {
+        "code": 200,
         "success": True,
         "image_match": True,
         "message": "Image matched successfully",
