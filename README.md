@@ -11,17 +11,17 @@ pip install -r requirements.txt
 Set these environment variables (or put them in `.env`):
 
 ```env
-DB_PORT=5432
-DB_NAME=urbanattendance_db
-DB_USER=postgres
-DB_PASS=Pro@2023
-DB_HOST=34.47.226.219
+DB_PORT=
+DB_NAME=
+DB_USER=
+DB_PASS=
+DB_HOST=
 ```
 
 Optional fallback:
 
 ```env
-DATABASE_URL=postgresql://postgres:postgres@localhost:5432/prevoyance
+DATABASE_URL=
 ```
 
 ## Run
